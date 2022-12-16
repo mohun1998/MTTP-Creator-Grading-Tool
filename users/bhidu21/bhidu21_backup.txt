@@ -1,0 +1,15 @@
+
+No Classification	0	0	0	0	1	1	1	Couple	0	Equal to or more than 30		
+No Classification	0	1	0	1	1	1	1	Male	0	Equal to or more than 30		
+No Classification	0	0	1	1	0	1	1	Female	0	less than 30 but more than 20		
+No Classification	1	1	1	0	1	1	1	No face	0	Equal to or more than 30		
+No Classification	1	0	0	1	1	1	1	Male	0	Equal to or more than 30		
+No Classification	0	0	1	0	0	1	1	No face	0	Equal to or more than 30		
+No Classification	0	0	0	0	1	1	1	No face	0	less than 30 but more than 20		
+Photography & Videography	0	1	1	0	0	1	1	Male	0	Equal to or more than 30		
+No Classification	1	1	1	0	0	1	1	Group	0	Equal to or more than 30		
+Music	1	1	0	0	0	1	1	Couple	0	Equal to or more than 30		
+No Classification	1	1	0	0	1	1	1	Female	0	Equal to or more than 30		
+No Classification	1	1	1	0	0	1	1	Male	0	less than 30 but more than 20		
+	1	0	0	0	1	1	1	Group	0	Equal to or more than 30		
+No Classification	0	0	0	0	0	1	1	Group	0	Equal to or more than 30		

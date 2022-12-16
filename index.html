@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#093c80" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" type="text/css" href="./css/ui.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/user_sign_in_complete.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet" />
+    <script src="./js/jquery.min.js"></script>
+    <link rel="icon" href="./images/favicon.ico" type="icon" sizes="16x16" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png" />
+    <title>MTTP:// MX TakaTak Grading Tool by MT Studios</title>
+  </head>
+  <body>
+    <div id="splashScreen">
+      <div id="splashLogo">
+        <img src="./images/mttp_logo.svg" />
+        <div class="SplashText">MX TakaTak Grading Tool</div>
+        <br />
+        <div class="SplashText">by MT Studios</div>
+      </div>
+      <form method="post" action="injestor.php" id="formInjestor">
+        <div id="SplashDeviceContainer">
+          <div id="SplashDevice">
+            <div id="SplashDeviceInner">
+              <h2 style="margin-top: 3px">Choose your device preference</h2>
+              <br />
+              <div class="SplashDeviceContainer" id="SplashDevices">
+                <div class="SplashDeviceBtn" id="PC">
+                  <div class="material-icons-outlined deviceIcon">computer</div>
+                  PC/Laptop
+                  <font class="SplashDeviceSubText">&nbsp</font>
+                </div>
+                <div class="SplashDeviceBtn" id="PCwr">
+                  <div class="material-icons-outlined deviceIcon">computer</div>
+                  PC/Laptop
+                  <font class="SplashDeviceSubText">With Auto Region</font>
+                </div>
+                <div class="SplashDeviceBtn" id="PhoneTk">
+                  <div class="material-icons-outlined deviceIcon">
+                    smartphone
+                  </div>
+                  Smartphone
+                  <font class="SplashDeviceSubText">TakaTak ID Assistant</font>
+                </div>
+                <div class="SplashDeviceBtn" id="Phone">
+                  <div class="material-icons-outlined deviceIcon">
+                    smartphone
+                  </div>
+                  Smartphone
+                  <font class="SplashDeviceSubText">All Inclusive</font>
+                </div>
+                <input
+                  type="text"
+                  name="devicePref"
+                  id="devicePrefInput"
+                  readonly
+                  required />
+              </div>
+            </div>
+            <div id="SplashUsername" class="hidden">
+              <h2>What's your name?</h2>
+              <br />
+              <div class="uac_icon_main">
+                <img
+                  src="./images/uac_hero.svg"
+                  style="height: 150px; width: 150px; pointer-events: none"
+                  alt="User Account" />
+                <div class="uac_icon_eyes">
+                  <div class="uac_icon_eye1"></div>
+                  <div class="uac_icon_eye2"></div>
+                  <div class="uac_icon_smile"></div>
+                </div>
+              </div>
+              <div class="input text">
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  class="username_text"
+                  autocomplete="off"
+                  autofocus="true"
+                  required /><label>Username</label>
+              </div>
+              <div class="splash_user_buttons">
+                <button
+                  id="SplashDeviceBack"
+                  type="button"
+                  class="prebutton splash_back"
+                  style="margin-left: 17px">
+                  Back
+                </button>
+                <button
+                  id="SplashUserSubmit"
+                  type="button"
+                  class="prebutton"
+                  style="margin-right: 20px">
+                  Sign In
+                </button>
+              </div>
+            </div>
+            <div id="SplashID" class="hidden">
+              <div id="splashUserDisplayName">Hello!</div>
+              <div class="input textarea">
+                <textarea
+                  name="IDSplitter"
+                  id="IDSplitter"
+                  class="username_text"
+                  autocomplete="off"
+                  autofocus="true"
+                  required></textarea
+                ><label>Paste TakaTak IDs here</label>
+              </div>
+              <div class="splash_user_buttons">
+                <button
+                  id="SplashUserBack"
+                  type="button"
+                  class="prebutton splash_back"
+                  style="
+                    margin-left: 17px;
+                    width: 55px;
+                    padding: 6px 10px 4px 10px !important;
+                  ">
+                  <div class="material-icons-round">arrow_back</div>
+                </button>
+                <a href="" id="skipToSheet" style="margin-right: 10px"
+                  ><button
+                    id="SplashUserSkip"
+                    name="skip"
+                    type="button"
+                    class="prebutton splash_back">
+                    Skip
+                  </button></a
+                >
+                <button
+                  id="SplashIDSubmit"
+                  name="submit"
+                  type="submit"
+                  class="prebutton"
+                  style="margin-right: 20px">
+                  Injest
+                </button>
+              </div>
+            </div>
+            <div id="SplashRegion" class="hidden">
+              <div id="splashRegionHeader">One Last Step.</div>
+              <div class="input textarea">
+                <textarea
+                  name="RegionSplitter"
+                  id="RegionSplitter"
+                  class="username_text"
+                  autocomplete="off"
+                  autofocus="true"></textarea
+                ><label>Paste Region Data based on IDs here</label>
+              </div>
+              <div class="splash_user_buttons">
+                <button
+                  id="SplashIDBack"
+                  type="button"
+                  class="prebutton splash_back"
+                  style="
+                    margin-left: 17px;
+                    width: 55px;
+                    padding: 6px 10px 4px 10px !important;
+                  ">
+                  <div class="material-icons-round">arrow_back</div>
+                </button>
+                <a href="" id="skipToSheet" style="margin-right: 10px"
+                  ><button
+                    id="SplashUserSkip"
+                    name="skip"
+                    type="button"
+                    class="prebutton splash_back">
+                    Skip
+                  </button></a
+                >
+                <button
+                  id="SplashRegionSubmit"
+                  name="region"
+                  type="button"
+                  class="prebutton"
+                  style="margin-right: 20px">
+                  Injest
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="dialog" class="hidden">
+      <div class="material-icons-round" id="dialogIcon"></div>
+      <div id="dialogMsg"></div>
+    </div>
+
+    <script src="./js/preindex.js"></script>
+    <script src="./js/index2.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

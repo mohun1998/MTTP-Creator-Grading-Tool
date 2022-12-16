@@ -1,0 +1,41 @@
+
+Games	0	0	0	0	0	1	1	No face	0			
+Games	0	0	1	0	1	1	1	No face	1			
+Comedy	1	1	0	0	0	1	1	Group	0			
+Entertainment Culture	1	1	0	0	1	1	1	Group	0			
+			0	0	0	0	0		0	Original	same body structure	Bad video quality
+			1									
+			0									Exceptional Singing
+			0									Exceptional Dance
+			0									
+			0									
+			1									
+			0									
+			1									
+			0									
+			0									
+			1									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			1									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									
+			0									

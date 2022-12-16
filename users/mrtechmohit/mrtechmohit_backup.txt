@@ -1,0 +1,6 @@
+
+Lip Sync	1	1	1	0	0	1	1	Male	0	equal to 10		No videos
+Daily Life	0	0	1	1	1	1	1	Male	0	equal to 10		Exceptional Dance
+Lip Sync	1	1		0	0	1	1	Male	0	less than 20 but more than 10		Private Account
+				0								No videos
+				0								Not found

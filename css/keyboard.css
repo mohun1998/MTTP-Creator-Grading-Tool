@@ -1,0 +1,594 @@
+/* MTTP Signature UI 2.0 by (C) MT Studios 2021
+Author: Mohit Nandgirikar */
+
+.blue {
+    --AccentMain3: rgb(32, 73, 126);
+    --AccentMainHover3: rgb(47, 128, 235);
+    --AccentMainFocus3: rgb(255, 255, 255);
+    --AccentFade3: rgb(46, 97, 163);
+    --AccentFadeLink3: rgb(40, 109, 199);
+    --AccentBorder3: transparent;
+    --AccentHoverBorder3: rgb(28, 103, 184);
+    --AccentFocusBorder3: rgb(168, 177, 187);
+}
+
+.light {
+    --Text2: #f6f6f6;
+    --TextInvert2: #000000;
+    --TextFade2: #a0a0a0;
+    --TextHighContrast2: #ffffff;
+    --TextAccent2: ;
+    
+    --ShadowColor2: rgba(0, 0, 0, 0.4);
+    
+    --MainFade2: rgb(223, 232, 237);
+    --MainFadeD2: rgb(201, 212, 216);
+    --MainFadeL2: rgb(239, 246, 250);
+
+    --AccentMain2: var(--AccentMain3);
+    --AccentMainHover2: var(--AccentMainHover3);
+    --AccentMainFocus2: var(--AccentMainFocus3);
+    --AccentFade2: var(--AccentFade3);
+    --AccentFadeLink2: var(--AccentFadeLink3);
+    --AccentBorder2: var(--AccentBorder3);
+    --AccentHoverBorder2: var(--AccentHoverBorder3);
+    --AccentFocusBorder2: var(--AccentFocusBorder3);
+    
+    transition: 0.3s ease;
+}
+
+.dark {
+    --Text2: #f6f6f6;
+    --TextInvert2: #ffffff;
+    --TextFade2: #a0a0a0;
+    --TextHighContrast2: #ffffff;
+    --TextAccent2: ;
+    
+    --ShadowColor2: rgba(0, 0, 0, 0.4);
+    
+    --MainFade2: rgb(4, 5, 5);
+    --MainFadeD2: rgb(66, 69, 75);
+    --MainFadeL2: rgb(30, 32, 34);
+
+    --AccentMain2: var(--AccentMain3);
+    --AccentMainHover2: var(--AccentMainHover3);
+    --AccentMainFocus2: rgb(46, 48, 51);
+    --AccentFade2: var(--AccentFade3);
+    --AccentFadeLink2: var(--AccentFadeLink3);
+    --AccentBorder2: var(--AccentBorder3);
+    --AccentHoverBorder2: var(--AccentHoverBorder3);
+    --AccentFocusBorder2: var(--AccentFocusBorder3);
+    
+    transition: 0.3s ease;
+}
+
+* {
+    --Text: var(--Text2);
+    --TextInvert: var(--TextInvert2);
+    --TextFade: var(--TextFade2);
+    --TextHighContrast: var(--TextHighContrast2);
+    --TextAccent: var(--TextAccent2);
+
+    --ShadowColor: var(--ShadowColor2);
+    
+    --AccentMain: var(--AccentMain2);
+    --AccentMainHover: var(--AccentMainHover2);
+    --AccentMainFocus: var(--AccentMainFocus2);
+    --AccentFade: var(--AccentFade2);
+    --MainFade: var(--MainFade2);
+    --MainFadeD: var(--MainFadeD2);
+    --MainFadeL: var(--MainFadeL2);
+    --AccentFadeLink: var(--AccentFadeLink2);
+    --AccentBorder: var(--AccentBorder2);
+    --AccentHoverBorder: var(--AccentHoverBorder2);
+    --AccentFocusBorder: var(--AccentFocusBorder2);
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#vKeyboardContainer {
+    background-color: purple;
+
+    height: 100%;
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -5;
+
+    display: flex;
+    justify-content: center;
+}
+
+#vKeyboard {
+    background-color: var(--MainFade);
+    border: 0px solid red;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0px 0px 10px var(--ShadowColor);
+    padding: 31px 10px 10px 10px;
+    box-sizing: border-box;
+    opacity: 1;
+
+    height: 350px;
+    width: 700px;
+
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s ease opacity 0.2s, 0.5s ease bottom 0s;
+    z-index: 20 !important;
+    will-change: opacity, bottom, top;
+}
+
+.vKeyboard_inactive {
+    bottom: -100% !important;
+    opacity: 0 !important;
+    transition: 0.3s ease opacity 0s, 0.5s ease bottom 0s !important;
+}
+
+.vKeyboardFloat {
+    border-radius: 10px 10px 10px 10px !important;
+    transition: border-radius 0.3s ease;
+}
+
+#vKeyboardHeader {
+    border: 0px solid red;
+    border-radius: 10px 10px 0px 0px;
+
+    height: 31px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#vKeyboardClose {
+    background-color: var(--MainFade);
+    border: 0px solid red;
+    border-radius: 7px;
+    padding: 3.5px;
+    box-sizing: border-box;
+    outline: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    
+    height: 25px;
+    width: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s ease background-color;
+}
+
+#vKeyboardClose:hover {
+    background-color: var(--MainFadeD);
+}
+
+#vKeyboardClose:focus {
+    background-color: var(--MainFadeD);
+    animation: 0.2s keyPress ease forwards;
+}
+
+#vKeyboardClose .material-icons-round {
+    color: var(--TextInvert);
+    transition: 0.2s ease transform;
+    transform: rotate(0deg);
+    font-size: 18px;
+}
+
+#vKeyboardClose:hover .material-icons-round {
+    transform: rotate(90deg);
+}
+
+#vKeyboardClose:focus .material-icons-round {
+    transform: rotate(90deg);
+}
+
+#vKeyboardKeyCL #CLicon {
+    transform: rotate(-90deg);
+    font-size: 25px !important;
+}
+
+.vKeyboardDragPillBox {
+    padding: 12px 10px;
+    border: 0px solid red;
+    cursor: grab;
+}
+
+.vKeyboardDragPillBox:active {
+    cursor: grabbing;
+}
+
+.vKeyboardDragPill {
+    background-color: var(--MainFadeL);
+    border: 0px solid red;
+    border-radius: 50px;
+    height: 6px;
+    width: 60px;
+}
+
+#vKeyboardKeys {
+    border: 0px solid red;
+
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+
+.vKeyboardKeysUppercase {
+    text-transform: uppercase !important;
+}
+
+#vKeyboardRow1 {
+    display: inherit;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: inherit;
+}
+
+#vKeyboardRow2 {
+    display: inherit;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: inherit;
+}
+
+#vKeyboardRow3 {
+    display: inherit;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-gap: inherit;
+}
+
+#vKeyboardRow4 {
+    display: inherit;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
+    grid-gap: inherit;
+}
+
+#vKeyboardRow5 {
+    display: inherit;
+    grid-template-columns: 1.5fr 1fr 5fr 1fr 1.5fr;
+    grid-gap: inherit;
+}
+
+.vKeyboardKey {
+    background-color: var(--AccentMainFocus);
+    border: 0px solid red;
+    border-radius: 7px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    font-family: myFont;
+    font-size: 18px;
+
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--TextInvert);
+
+    cursor: pointer;
+    transition: 0.2s ease background-color;
+    user-select: none;
+    position: relative;
+}
+
+.vKeyboardKey2 {
+    background-color: var(--MainFadeL);
+    font-size: 15px;
+}
+
+.vKeyboardKeyActive {
+    background-color: var(--AccentMain);
+    color: var(--TextHighContrast);
+    font-size: 15px;
+}
+
+.vKeyboardKeyActive:hover, .vKeyboardKeyActive:active {
+    background-color: var(--AccentFade) !important;
+}
+
+.vKeyboardKey:hover {
+    background-color: var(--MainFadeD);
+}
+
+.vKeyboardKey:active {
+    animation: keyPress 0.2s ease;
+}
+
+#vKeyboardKeySpace:active {
+    animation: keyPressSpace 0.2s ease;
+}
+
+@keyframes keyPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes keyPressSpace {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes keyPressM {
+    0% {
+        transform: scale(1);
+        background-color: var(--MainFade);
+    }
+    50% {
+        transform: scale(0.8);
+        background-color: var(--MainFadeD);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--MainFade);
+    }
+}
+
+@keyframes keyPressMSpace {
+    0% {
+        transform: scale(1);
+        background-color: var(--MainFade);
+    }
+    50% {
+        transform: scale(0.9);
+        background-color: var(--MainFadeD);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--MainFade);
+    }
+}
+
+@keyframes keypressMobile {
+    0% {
+        opacity: 0;
+        height: 40px;
+        transform: scale(1);
+    }
+    10% {
+        opacity: 1;
+        height: 90px;
+        transform: scale(1.12);
+    }
+    85% {
+        opacity: 1;
+        height: 90px;
+        transform: scale(1.12);
+    }
+    99% {
+        opacity: 0;
+        height: 90px;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        height: 40px;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:700px) {
+    #vKeyboard {
+        height: 270px;
+        width: 100%;
+        padding: 31px 7px 7px 7px;
+    }
+
+    #vKeyboardSpacer {
+        border: 0px solid red;
+        height: 0px;
+        width: 100%;
+        transition: 0.5s height ease;
+    }
+
+    .vKeyboardSpacerActive {
+        height: 270px !important;
+    }
+
+    #vKeyboardKeys {
+        grid-gap: 6px;
+    }
+
+    .vKeyboardKey {
+        border-radius: 7px;
+    }
+
+    .vKeyboardKey2:active {
+        background-color: var(--MainFadeD) !important;
+    } 
+
+    .vKeyboardKey:active {
+        background-color: var(--AccentMainFocus) !important;
+        animation: keyPress 0s;
+    }
+
+    .vKeyboardKey:active::after {
+        content: '';
+        background-color: var(--MainFadeD);
+        position: absolute;
+        z-index: 50;
+        bottom: 0px;
+        width: 100%;
+        border-radius: 7px;
+        opacity: 1;
+        height: 40px;
+        animation: 1s keypressMobile ease;
+        text-transform: inherit;
+        padding-top: 7px;
+        box-sizing: border-box;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #vKeyboardKey1:active::after {
+        content: '1' !important;
+    }
+    #vKeyboardKey2:active::after {
+        content: '2' !important;
+    }
+    #vKeyboardKey3:active::after {
+        content: '3' !important;
+    }
+    #vKeyboardKey4:active::after {
+        content: '4' !important;
+    }
+    #vKeyboardKey5:active::after {
+        content: '5' !important;
+    }
+    #vKeyboardKey6:active::after {
+        content: '6' !important;
+    }
+    #vKeyboardKey7:active::after {
+        content: '7' !important;
+    }
+    #vKeyboardKey8:active::after {
+        content: '8' !important;
+    }
+    #vKeyboardKey9:active::after {
+        content: '9' !important;
+    }
+    #vKeyboardKey0:active::after {
+        content: '0' !important;
+    }
+
+    #vKeyboardKeyQ:active::after {
+        content: 'q' !important;
+    }
+    #vKeyboardKeyW:active::after {
+        content: 'w' !important;
+    }
+    #vKeyboardKeyE:active::after {
+        content: 'e' !important;
+    }
+    #vKeyboardKeyR:active::after {
+        content: 'r' !important;
+    }
+    #vKeyboardKeyT:active::after {
+        content: 't' !important;
+    }
+    #vKeyboardKeyY:active::after {
+        content: 'y' !important;
+    }
+    #vKeyboardKeyU:active::after {
+        content: 'u' !important;
+    }
+    #vKeyboardKeyI:active::after {
+        content: 'i' !important;
+    }
+    #vKeyboardKeyO:active::after {
+        content: 'o' !important;
+    }
+    #vKeyboardKeyP:active::after {
+        content: 'p' !important;
+    }
+
+    #vKeyboardKeyA:active::after {
+        content: 'a' !important;
+    }
+    #vKeyboardKeyS:active::after {
+        content: 's' !important;
+    }
+    #vKeyboardKeyD:active::after {
+        content: 'd' !important;
+    }
+    #vKeyboardKeyF:active::after {
+        content: 'f' !important;
+    }
+    #vKeyboardKeyG:active::after {
+        content: 'g' !important;
+    }
+    #vKeyboardKeyH:active::after {
+        content: 'h' !important;
+    }
+    #vKeyboardKeyJ:active::after {
+        content: 'j' !important;
+    }
+    #vKeyboardKeyK:active::after {
+        content: 'k' !important;
+    }
+    #vKeyboardKeyL:active::after {
+        content: 'l' !important;
+    }
+
+    #vKeyboardKeyZ:active::after {
+        content: 'z' !important;
+    }
+    #vKeyboardKeyX:active::after {
+        content: 'x' !important;
+    }
+    #vKeyboardKeyC:active::after {
+        content: 'c' !important;
+    }
+    #vKeyboardKeyV:active::after {
+        content: 'v' !important;
+    }
+    #vKeyboardKeyB:active::after {
+        content: 'b' !important;
+    }
+    #vKeyboardKeyN:active::after {
+        content: 'n' !important;
+    }
+    #vKeyboardKeyM:active::after {
+        content: 'm' !important;
+    }
+
+    #vKeyboardKeyDot:active::after {
+        content: '.' !important;
+        display: block !important;
+    }
+    #vKeyboardKeyComma:active::after {
+        content: ',' !important;
+        display: block !important;
+    }
+    #vKeyboardKeySpace::after {
+        display: none;
+    }
+
+    .vKeyboardKey2::after {
+        display: none;
+    }
+
+    #vKeyboardKeySpace:active {
+        animation: keyPress 0s;
+    }
+
+    #vKeyboardClose {
+        display: none;
+    }
+
+    #vKeyboardKeyEnter .material-icons-outlined {
+        font-size: 19px !important;
+    }
+    
+    .vkeyboardKey:active {
+        background-color: var(--AccentMainFocus) !important;
+    }
+}
